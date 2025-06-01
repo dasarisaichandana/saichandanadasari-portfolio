@@ -1,12 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import HeroSection from '../components/HeroSection';
+import TimelineSection from '../components/TimelineSection';
+import ProjectsSection from '../components/ProjectsSection';
+import SkillsOrbit from '../components/SkillsOrbit';
+import VolunteerSection from '../components/VolunteerSection';
+import ContactSection from '../components/ContactSection';
+import ChatBot from '../components/ChatBot';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-900 dark:via-blue-900 dark:to-indigo-900">
+      <HeroSection />
+      <TimelineSection />
+      <ProjectsSection />
+      <SkillsOrbit />
+      <VolunteerSection />
+      <ContactSection />
+      <ChatBot />
     </div>
   );
 };
