@@ -60,14 +60,18 @@ const ContactSection = () => {
                   <span className="text-2xl">📧</span>
                   <div>
                     <p className="font-semibold text-gray-800 dark:text-white">Email</p>
-                    <p className="text-blue-600">saichandana0599@gmail.com</p>
+                    <a href="mailto:saichandana0599@gmail.com" className="text-blue-600 hover:underline">
+                      saichandana0599@gmail.com
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <span className="text-2xl">📱</span>
                   <div>
                     <p className="font-semibold text-gray-800 dark:text-white">Phone</p>
-                    <p className="text-blue-600">+1 506-440-0852</p>
+                    <a href="tel:+15064400852" className="text-blue-600 hover:underline">
+                      +1 506-440-0852
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -75,6 +79,34 @@ const ContactSection = () => {
                   <div>
                     <p className="font-semibold text-gray-800 dark:text-white">Location</p>
                     <p className="text-blue-600">Fredericton, NB - Canada</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">💼</span>
+                  <div>
+                    <p className="font-semibold text-gray-800 dark:text-white">LinkedIn</p>
+                    <a 
+                      href="https://www.linkedin.com/in/sai-chandana-dasari-a95433215/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      Connect with me
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <span className="text-2xl">👩‍💻</span>
+                  <div>
+                    <p className="font-semibold text-gray-800 dark:text-white">GitHub</p>
+                    <a 
+                      href="https://github.com/dasarisaichandana" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:underline"
+                    >
+                      View my code
+                    </a>
                   </div>
                 </div>
               </CardContent>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -65,7 +64,7 @@ const ProjectsSection = () => {
       category: "Machine Learning",
       tags: ["Machine Learning", "Healthcare", "Classification", "Scikit-learn", "Clinical Data"],
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/dasarisaichandana/Heart-disease-prediction",
       image: "❤️",
       impact: "Healthcare ML pipeline for early disease detection"
     }
@@ -139,21 +138,14 @@ const ProjectsSection = () => {
                 </div>
 
                 <div className="flex gap-3 pt-4">
-                  {project.githubUrl !== "#" ? (
-                    <Button 
-                      size="sm" 
-                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                    >
-                      <Github size={16} className="mr-2" />
-                      View Code
-                    </Button>
-                  ) : (
-                    <Button size="sm" className="flex-1 bg-gray-400 cursor-not-allowed" disabled>
-                      <Github size={16} className="mr-2" />
-                      Private Repo
-                    </Button>
-                  )}
+                  <Button 
+                    size="sm" 
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                    onClick={() => window.open(project.githubUrl, '_blank')}
+                  >
+                    <Github size={16} className="mr-2" />
+                    View Code
+                  </Button>
                   {project.demoUrl !== "#" && (
                     <Button 
                       size="sm" 
