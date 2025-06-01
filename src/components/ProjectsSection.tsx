@@ -3,55 +3,75 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Github } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 
 const ProjectsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   
   const projects = [
     {
-      title: "Banking Application Dashboard",
-      description: "Angular-based core banking dashboard with real-time data visualization and secure authentication",
+      title: "Dynamic Food Ordering System",
+      description: "Built a scalable meal ordering platform using MongoDB to support dietary customization, allergies, and user preferences. Deployed on AWS with a responsive front end and flexible NoSQL design.",
+      category: "Full Stack",
+      tags: ["MongoDB", "React", "NoSQL", "AWS", "User Personalization"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/dasarisaichandana/mealplanner",
+      image: "🍽️",
+      impact: "Scalable platform supporting complex dietary preferences and allergies"
+    },
+    {
+      title: "FoodApp – Secure Ordering UI",
+      description: "Developed a modern Angular front end with JWT authentication and bcrypt password protection. Implemented CORS policy, XSS prevention, and OWASP best practices.",
       category: "Angular",
-      tags: ["Angular", "NgRx", "RxJS", "Material-UI", "Jasmine"],
+      tags: ["Angular", "TypeScript", "Security", "OWASP", "JWT"],
       demoUrl: "#",
-      githubUrl: "#",
-      image: "🏦",
-      impact: "Improved user experience for 10,000+ banking customers"
+      githubUrl: "https://github.com/dasarisaichandana/foodApp",
+      image: "🍕",
+      impact: "Enhanced security with OWASP compliance and modern authentication"
     },
     {
-      title: "Health Card PWA",
-      description: "Progressive Web App for health card registration with offline capabilities and Firebase integration",
-      category: "React",
-      tags: ["React", "PWA", "Firebase", "Node.js", "Material-UI"],
+      title: "Facial Emotion Detection System",
+      description: "Used CNNs and OpenCV to detect real-time facial expressions for mental health and engagement apps. Designed emotion prediction dashboard with intuitive visualization.",
+      category: "Machine Learning",
+      tags: ["Python", "OpenCV", "CNN", "Facial Recognition"],
       demoUrl: "#",
-      githubUrl: "#",
-      image: "🏥",
-      impact: "Reduced registration time by 60% with offline-first design"
+      githubUrl: "https://github.com/dasarisaichandana/Real-time-detection",
+      image: "😊",
+      impact: "Real-time emotion detection for mental health applications"
     },
     {
-      title: "Social Innovation Platform",
-      description: "React dashboard for social impact tracking with Google OAuth and performance optimizations",
-      category: "React",
-      tags: ["React", "Vite", "Google OAuth", "Material-UI", "Performance"],
+      title: "Fruit & Vegetable Classifier",
+      description: "Created a smart classifier using TensorFlow to identify produce items in real-time. Trained with image data for potential smart kitchen or retail use cases.",
+      category: "Machine Learning",
+      tags: ["Deep Learning", "TensorFlow", "Image Classification"],
       demoUrl: "#",
-      githubUrl: "#",
-      image: "🌍",
-      impact: "50% faster cold starts with Vite migration"
+      githubUrl: "https://github.com/dasarisaichandana/AI-ML-Learning",
+      image: "🥕",
+      impact: "AI-powered classification for smart kitchen applications"
     },
     {
-      title: "Capital Markets Monitor",
-      description: "Business intelligence dashboard for monitoring capital markets applications and batch jobs",
-      category: "Analytics",
-      tags: ["Power BI", "SQL", "Excel", "Business Analysis"],
+      title: "Deep Learning Labs",
+      description: "Explored CNNs, RNNs, and regularization techniques through Jupyter notebooks and TensorFlow. Trained on MNIST and IMDB datasets with tuning for real-world conditions.",
+      category: "Machine Learning",
+      tags: ["Deep Learning", "Neural Networks", "TensorFlow", "NLP"],
+      demoUrl: "#",
+      githubUrl: "https://github.com/dasarisaichandana/Deep-Learning",
+      image: "🧠",
+      impact: "Comprehensive exploration of deep learning architectures"
+    },
+    {
+      title: "Heart Disease Prediction Model",
+      description: "Developed a machine learning pipeline to predict heart disease based on clinical characteristics using K-Nearest Neighbors, Logistic Regression, and Random Forest. Evaluated model accuracy and interpretability to assist in early detection and decision-making in healthcare scenarios.",
+      category: "Machine Learning",
+      tags: ["Machine Learning", "Healthcare", "Classification", "Scikit-learn", "Clinical Data"],
       demoUrl: "#",
       githubUrl: "#",
-      image: "📈",
-      impact: "Reduced system downtime by 40% through proactive monitoring"
+      image: "❤️",
+      impact: "Healthcare ML pipeline for early disease detection"
     }
   ];
 
-  const categories = ['All', 'React', 'Angular', 'Analytics'];
+  const categories = ['All', 'Full Stack', 'Angular', 'Machine Learning'];
 
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
@@ -64,7 +84,7 @@ const ProjectsSection = () => {
           "Code With Soul" Projects
         </h2>
         <p className="text-center text-gray-600 dark:text-gray-400 mb-12 text-lg">
-          Where creativity meets functionality ✨
+          Real-world solutions from my GitHub portfolio ✨
         </p>
 
         {/* Category Filter */}
@@ -119,12 +139,31 @@ const ProjectsSection = () => {
                 </div>
 
                 <div className="flex gap-3 pt-4">
-                  <Button size="sm" className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                    Live Demo
-                  </Button>
-                  <Button size="sm" variant="outline" className="hover:bg-gray-100">
-                    <Github size={16} />
-                  </Button>
+                  {project.githubUrl !== "#" ? (
+                    <Button 
+                      size="sm" 
+                      className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                    >
+                      <Github size={16} className="mr-2" />
+                      View Code
+                    </Button>
+                  ) : (
+                    <Button size="sm" className="flex-1 bg-gray-400 cursor-not-allowed" disabled>
+                      <Github size={16} className="mr-2" />
+                      Private Repo
+                    </Button>
+                  )}
+                  {project.demoUrl !== "#" && (
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="hover:bg-gray-100"
+                      onClick={() => window.open(project.demoUrl, '_blank')}
+                    >
+                      <ExternalLink size={16} />
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
