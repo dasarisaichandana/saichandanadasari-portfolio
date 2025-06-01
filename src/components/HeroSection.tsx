@@ -60,10 +60,20 @@ const HeroSection = () => {
         </div>
 
         <div className="flex justify-center space-x-6">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transform hover:scale-110 transition-all duration-200">
+          <a 
+            href="https://github.com/dasarisaichandana" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-gray-600 hover:text-blue-600 transform hover:scale-110 transition-all duration-200"
+          >
             <Github size={32} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transform hover:scale-110 transition-all duration-200">
+          <a 
+            href="https://www.linkedin.com/in/sai-chandana-dasari-a95433215/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-gray-600 hover:text-blue-600 transform hover:scale-110 transition-all duration-200"
+          >
             <Linkedin size={32} />
           </a>
         </div>
