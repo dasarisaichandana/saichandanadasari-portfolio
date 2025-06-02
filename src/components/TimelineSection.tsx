@@ -7,7 +7,7 @@ const TimelineSection = () => {
   const experiences = [
     {
       role: "Contract Full Stack Developer",
-      company: "Greater Fredericton Social Innovation",
+      company: "GFSI",
       period: "May 2025 – Present",
       location: "NB, Canada",
       achievements: [
@@ -83,15 +83,17 @@ const TimelineSection = () => {
           
           {experiences.map((exp, index) => (
             <div key={index} className={`flex items-center mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-              <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
+              <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
                 <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-blue-300">
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-2xl">{exp.emoji}</span>
-                      <h3 className="text-xl font-bold text-gray-800 dark:text-white">{exp.role}</h3>
+                    <div className={`mb-3 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                      <div className="flex items-center gap-2 mb-2 justify-start">
+                        <span className="text-2xl">{exp.emoji}</span>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">{exp.role}</h3>
+                      </div>
+                      <p className="text-lg font-semibold text-blue-600 mb-1">{exp.company}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{exp.period} • {exp.location}</p>
                     </div>
-                    <p className="text-lg font-semibold text-blue-600 mb-2">{exp.company}</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{exp.period} • {exp.location}</p>
                     
                     <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg mb-4">
                       <p className="text-sm font-semibold text-blue-800 dark:text-blue-300">
@@ -102,13 +104,13 @@ const TimelineSection = () => {
                     <div className="space-y-2 mb-4">
                       {exp.achievements.slice(0, 2).map((achievement, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <span className="text-blue-600 text-sm mt-0.5 leading-none">•</span>
+                          <span className="text-blue-600 text-sm mt-0.5 leading-none flex-shrink-0">•</span>
                           <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{achievement}</p>
                         </div>
                       ))}
                     </div>
                     
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 justify-start">
                       {exp.skills.map((skill, skillIdx) => (
                         <Badge key={skillIdx} variant="secondary" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                           {skill}
