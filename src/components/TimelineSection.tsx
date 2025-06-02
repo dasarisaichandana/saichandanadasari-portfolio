@@ -99,11 +99,11 @@ const TimelineSection = () => {
                       </p>
                     </div>
                     
-                    <div className="space-y-2 mb-4">
+                    <div className="space-y-3 mb-4">
                       {exp.achievements.slice(0, 2).map((achievement, idx) => (
-                        <div key={idx} className="flex items-start gap-2">
-                          <span className="text-blue-600 mt-1">•</span>
-                          <p className="text-sm text-gray-700 dark:text-gray-300 flex-1">{achievement}</p>
+                        <div key={idx} className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{achievement}</p>
                         </div>
                       ))}
                     </div>
