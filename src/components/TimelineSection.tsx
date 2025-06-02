@@ -11,10 +11,10 @@ const TimelineSection = () => {
       period: "May 2025 – Present",
       location: "NB, Canada",
       achievements: [
-        "🚀 Supercharged performance: Migrated to Vite, boosting cold start speeds by 50%+ and transforming developer experience",
-        "🔐 Enhanced security: Integrated Google OAuth for seamless, secure user authentication across meal planning platform",
-        "⚡ Performance champion: Improved Lighthouse scores by 30+ points through strategic lazy loading and code-splitting",
-        "🎨 Built scalable React dashboard components using Material-UI, creating modular and maintainable architecture"
+        "Supercharged performance: Migrated to Vite, boosting cold start speeds by 50%+ and transforming developer experience",
+        "Enhanced security: Integrated Google OAuth for seamless, secure user authentication across meal planning platform",
+        "Performance champion: Improved Lighthouse scores by 30+ points through strategic lazy loading and code-splitting",
+        "Built scalable React dashboard components using Material-UI, creating modular and maintainable architecture"
       ],
       skills: ["React", "Vite", "Material-UI", "Google OAuth", "Performance Optimization"],
       emoji: "🚀",
@@ -26,10 +26,10 @@ const TimelineSection = () => {
       period: "May 2023 – Jan 2024",
       location: "Fredericton, NB",
       achievements: [
-        "🎯 Mission-critical support: Managed Level 1 operations for 9 Capital Markets applications, ensuring 99.9% uptime",
-        "📊 Data-driven insights: Led comprehensive analysis using SQL, Power BI, and Excel to identify optimization opportunities",
-        "🤝 Stakeholder champion: Facilitated workshops and UAT efforts, translating business needs into actionable technical requirements",
-        "🔍 Problem solver: Reduced system downtime through proactive monitoring and strategic gap analysis"
+        "Mission-critical support: Managed Level 1 operations for 9 Capital Markets applications, ensuring 99.9% uptime",
+        "Data-driven insights: Led comprehensive analysis using SQL, Power BI, and Excel to identify optimization opportunities",
+        "Stakeholder champion: Facilitated workshops and UAT efforts, translating business needs into actionable technical requirements",
+        "Problem solver: Reduced system downtime through proactive monitoring and strategic gap analysis"
       ],
       skills: ["SQL", "Power BI", "Excel", "Business Analysis", "UAT"],
       emoji: "📊",
@@ -41,10 +41,10 @@ const TimelineSection = () => {
       period: "Oct 2020 – Dec 2022",
       location: "India",
       achievements: [
-        "🏦 Banking excellence: Delivered production-ready Angular UI prototypes for core banking applications under tight deadlines",
-        "📚 Developer efficiency: Created comprehensive Storybook component library, standardizing development practices",
-        "🔄 DevOps mastery: Streamlined CI/CD pipelines using Jenkins and GitLab, reducing deployment time by 40%",
-        "✅ Quality assurance: Established automated testing standards with Karma and Jasmine, ensuring 95%+ code coverage"
+        "Banking excellence: Delivered production-ready Angular UI prototypes for core banking applications under tight deadlines",
+        "Developer efficiency: Created comprehensive Storybook component library, standardizing development practices",
+        "DevOps mastery: Streamlined CI/CD pipelines using Jenkins and GitLab, reducing deployment time by 40%",
+        "Quality assurance: Established automated testing standards with Karma and Jasmine, ensuring 95%+ code coverage"
       ],
       skills: ["Angular", "Storybook", "Jenkins", "GitLab CI/CD", "Karma", "Jasmine"],
       emoji: "💼",
@@ -56,10 +56,10 @@ const TimelineSection = () => {
       period: "Oct 2019 - Sep 2020",
       location: "Remote",
       achievements: [
-        "🌐 PWA pioneer: Built responsive Health Card and registration systems for Vikalp PWA, serving thousands of users",
-        "🔥 Firebase expert: Architected scalable Cloud Functions in Node.js for authentication and business logic",
-        "🔄 State management: Mastered NgRx and RxJS for complex data flow in banking applications",
-        "📱 User-centric design: Implemented Angular Material and Reactive Forms, reducing form errors by 60%"
+        "PWA pioneer: Built responsive Health Card and registration systems for Vikalp PWA, serving thousands of users",
+        "Firebase expert: Architected scalable Cloud Functions in Node.js for authentication and business logic",
+        "State management: Mastered NgRx and RxJS for complex data flow in banking applications",
+        "User-centric design: Implemented Angular Material and Reactive Forms, reducing form errors by 60%"
       ],
       skills: ["Angular", "PWA", "NgRx", "Firebase", "Node.js"],
       emoji: "🌱",
@@ -101,7 +101,10 @@ const TimelineSection = () => {
                     
                     <div className="space-y-2 mb-4">
                       {exp.achievements.slice(0, 2).map((achievement, idx) => (
-                        <p key={idx} className="text-sm text-gray-700 dark:text-gray-300">• {achievement}</p>
+                        <div key={idx} className="flex items-start gap-2">
+                          <span className="text-blue-600 mt-1">•</span>
+                          <p className="text-sm text-gray-700 dark:text-gray-300 flex-1">{achievement}</p>
+                        </div>
                       ))}
                     </div>
                     

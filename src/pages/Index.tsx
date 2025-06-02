@@ -7,7 +7,6 @@ import ProjectsSection from '../components/ProjectsSection';
 import SkillsOrbit from '../components/SkillsOrbit';
 import VolunteerSection from '../components/VolunteerSection';
 import ContactSection from '../components/ContactSection';
-import ChatBot from '../components/ChatBot';
 
 const Index = () => {
   return (
@@ -31,7 +30,6 @@ const Index = () => {
       <section id="contact">
         <ContactSection />
       </section>
-      <ChatBot />
     </div>
   );
 };
