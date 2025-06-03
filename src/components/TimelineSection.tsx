@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+
 const TimelineSection = () => {
   const experiences = [{
     role: "Contract Full Stack Developer",
@@ -39,7 +41,9 @@ const TimelineSection = () => {
     emoji: "🌱",
     impact: "Launched critical healthcare PWA while mastering modern web technologies and cloud architecture"
   }];
-  return <section id="timeline" className="py-20 px-6">
+
+  return (
+    <section id="timeline" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           My Impact Journey
@@ -52,12 +56,13 @@ const TimelineSection = () => {
           {/* Timeline line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
           
-          {experiences.map((exp, index) => <div key={index} className={`flex items-center mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+          {experiences.map((exp, index) => (
+            <div key={index} className={`flex items-center mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
               <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
                 <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-blue-300">
                   <CardContent className="p-6">
-                    <div className={`mb-3 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                      <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                    <div className="mb-3">
+                      <div className="flex items-center gap-2 mb-2">
                         <span className="text-2xl">{exp.emoji}</span>
                         <h3 className="text-xl font-bold text-gray-800 dark:text-white">{exp.role}</h3>
                       </div>
@@ -65,23 +70,27 @@ const TimelineSection = () => {
                       <p className="text-sm text-gray-600 dark:text-gray-400">{exp.period} • {exp.location}</p>
                     </div>
                     
-                    <div className={`bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg mb-4 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg mb-4">
                       <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                         🎯 Impact: {exp.impact}
                       </p>
                     </div>
                     
                     <div className="space-y-2 mb-4">
-                      {exp.achievements.slice(0, 2).map((achievement, idx) => <div key={idx} className={`flex items-start gap-2 ${index % 2 === 0 ? 'flex-row-reverse text-right' : 'flex-row'}`}>
+                      {exp.achievements.slice(0, 2).map((achievement, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
                           <span className="text-blue-600 text-sm mt-0.5 leading-none flex-shrink-0">•</span>
                           <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{achievement}</p>
-                        </div>)}
+                        </div>
+                      ))}
                     </div>
                     
-                    <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-                      {exp.skills.map((skill, skillIdx) => <Badge key={skillIdx} variant="secondary" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
+                    <div className="flex flex-wrap gap-2">
+                      {exp.skills.map((skill, skillIdx) => (
+                        <Badge key={skillIdx} variant="secondary" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
                           {skill}
-                        </Badge>)}
+                        </Badge>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
@@ -91,7 +100,8 @@ const TimelineSection = () => {
               <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white shadow-lg z-10"></div>
               
               <div className="w-5/12"></div>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         {/* Summary Section */}
@@ -117,6 +127,8 @@ const TimelineSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default TimelineSection;
