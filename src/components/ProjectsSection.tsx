@@ -22,9 +22,9 @@ const ProjectsSection = () => {
       title: "FoodApp – Secure Ordering UI",
       description: "Developed a modern Angular front end with JWT authentication and bcrypt password protection. Implemented CORS policy, XSS prevention, and OWASP best practices.",
       category: "Angular",
-      tags: ["Angular", "TypeScript", "Security", "OWASP", "JWT"],
+      tags: ["Angular", "TypeScript", "Node.js", "MongoDB", "Security", "OWASP", "JWT"],
       demoUrl: "#",
-      githubUrl: "https://github.com/dasarisaichandana/foodApp",
+      githubUrl: "https://github.com/dasarisaichandana/foodApp/tree/main/FoodApp",
       image: "🍕",
       impact: "Enhanced security with OWASP compliance and modern authentication"
     },
