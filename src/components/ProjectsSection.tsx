@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -61,8 +62,8 @@ const ProjectsSection = () => {
     {
       title: "Heart Disease Prediction Model",
       description: "Developed a machine learning pipeline to predict heart disease based on clinical characteristics using K-Nearest Neighbors, Logistic Regression, and Random Forest. Evaluated model accuracy and interpretability to assist in early detection and decision-making in healthcare scenarios.",
-      category: "Machine Learning",
-      tags: ["Machine Learning", "Healthcare", "Classification", "Scikit-learn", "Clinical Data"],
+      category: "Data Analytics",
+      tags: ["Machine Learning", "Healthcare", "Classification", "Scikit-learn", "Clinical Data", "Predictive Analytics"],
       demoUrl: "#",
       githubUrl: "https://github.com/dasarisaichandana/Heart-disease-prediction",
       image: "❤️",
@@ -70,7 +71,7 @@ const ProjectsSection = () => {
     }
   ];
 
-  const categories = ['All', 'Full Stack', 'Angular', 'Machine Learning'];
+  const categories = ['All', 'Full Stack', 'Angular', 'Machine Learning', 'Data Analytics'];
 
   const filteredProjects = selectedCategory === 'All' 
     ? projects 

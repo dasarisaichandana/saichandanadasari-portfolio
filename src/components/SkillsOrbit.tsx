@@ -36,6 +36,16 @@ const SkillsOrbit = () => {
       skills: ["Firebase", "AWS", "Node.js", "REST APIs"],
       color: "from-indigo-500 to-purple-500",
       icon: "☁️"
+    },
+    "Business Analysis": {
+      skills: ["SQL", "Power BI", "Excel", "UAT", "Stakeholder Management", "Process Improvement"],
+      color: "from-emerald-500 to-teal-500",
+      icon: "📊"
+    },
+    "Data Analytics": {
+      skills: ["Data Analysis", "Business Intelligence", "Requirements Gathering", "Gap Analysis", "Reporting"],
+      color: "from-orange-500 to-amber-500",
+      icon: "📈"
     }
   };
 
@@ -46,7 +56,7 @@ const SkillsOrbit = () => {
           Skills Constellation
         </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {Object.entries(skillCategories).map(([category, data], index) => (
             <Card 
               key={category}
@@ -57,7 +67,7 @@ const SkillsOrbit = () => {
                 <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">
                   {data.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-gray-800 dark:text-white">
+                <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-white">
                   {category}
                 </h3>
                 
