@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -136,24 +137,6 @@ const ContactSection = () => {
                 </div>
               </CardContent>
             </Card>
-
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 p-6 rounded-lg">
-              <h3 className="text-lg font-bold mb-3 text-gray-800 dark:text-white">
-                🚀 Open to Opportunities
-              </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                Currently seeking full-time Front-End Developer positions in Canada. 
-                Passionate about React, Angular, and creating exceptional user experiences.
-              </p>
-              <div className="flex space-x-2">
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold">
-                  Available Now
-                </span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
-                  Remote Friendly
-                </span>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}
