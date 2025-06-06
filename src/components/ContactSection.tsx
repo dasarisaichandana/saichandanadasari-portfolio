@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -18,15 +18,40 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      // Initialize EmailJS with your public key
+      emailjs.init('vue-FYznpw88CB6d8');
+      
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        'service_0tex78o', // Service ID
+        'template_fnhk0rt', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Sai Chandana',
+        }
+      );
+
+      console.log('Email sent successfully:', result);
+      
       toast({
         title: "Message sent! 🎉",
         description: "Thanks for reaching out! I'll get back to you soon.",
       });
+      
       setFormData({ name: '', email: '', message: '' });
-    }, 2000);
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error sending message",
+        description: "Something went wrong. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
