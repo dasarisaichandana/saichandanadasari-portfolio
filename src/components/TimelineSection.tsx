@@ -53,12 +53,58 @@ const TimelineSection = () => {
         </p>
         
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+          {/* Timeline line - hidden on mobile, visible on md+ */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
+          
+          {/* Mobile timeline line - visible only on mobile */}
+          <div className="md:hidden absolute left-6 top-0 w-1 h-full bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></div>
           
           {experiences.map((exp, index) => (
-            <div key={index} className={`flex items-center mb-16 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-              <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+            <div key={index} className={`flex items-center mb-16 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              {/* Mobile layout - single column with left-aligned dots */}
+              <div className="md:hidden w-full pl-16 relative">
+                {/* Mobile timeline dot */}
+                <div className="absolute -left-2 top-6 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                
+                <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-blue-300">
+                  <CardContent className="p-6">
+                    <div className="mb-3">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-2xl">{exp.emoji}</span>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">{exp.role}</h3>
+                      </div>
+                      <p className="text-lg font-semibold text-blue-600 mb-1">{exp.company}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{exp.period} • {exp.location}</p>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 p-3 rounded-lg mb-4">
+                      <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                        🎯 Impact: {exp.impact}
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-2 mb-4">
+                      {exp.achievements.slice(0, 2).map((achievement, idx) => (
+                        <div key={idx} className="flex items-start gap-2">
+                          <span className="text-blue-600 text-sm mt-0.5 leading-none flex-shrink-0">•</span>
+                          <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{achievement}</p>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {exp.skills.map((skill, skillIdx) => (
+                        <Badge key={skillIdx} variant="secondary" className="text-xs bg-blue-100 text-blue-800 hover:bg-blue-200">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Desktop layout - alternating cards */}
+              <div className={`hidden md:block w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
                 <Card className="group hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-blue-300">
                   <CardContent className="p-6">
                     <div className="mb-3">
@@ -96,10 +142,10 @@ const TimelineSection = () => {
                 </Card>
               </div>
               
-              {/* Timeline dot */}
-              <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+              {/* Desktop timeline dot */}
+              <div className="hidden md:block w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white shadow-lg z-10"></div>
               
-              <div className="w-5/12"></div>
+              <div className="hidden md:block w-5/12"></div>
             </div>
           ))}
         </div>
