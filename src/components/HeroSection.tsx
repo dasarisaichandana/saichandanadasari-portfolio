@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -34,7 +33,7 @@ const HeroSection = () => {
             <span className="animate-pulse">|</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-2">
-            Front-End Developer & Emerging Business Analyst
+            Software Developer & Emerging Business Analyst
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
             Bridging technical excellence with business insights through React, Angular & strategic analysis
